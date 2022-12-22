@@ -2,6 +2,7 @@
 #include "Passenger.h"
 #include "Date.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -25,16 +26,20 @@ int main()
 
 		Date date;
 
-		cout << "===========================================================================================================" << endl << endl;
-		cout << "=                                                MAIN MENU                                                =" << endl << endl;
 		cout << "===========================================================================================================" << endl;
-		cout << "=                                                                                                         =" << endl << endl;
-		cout << "=                                         1. Book a train.                                                =" << endl << endl;
-		cout << "=                                         2. Cancel booking.                                              =" << endl << endl;
-		cout << "=                                         3. Show my reservation.                                         =" << endl << endl;
-		cout << "=                                         4. Admin menu.                                                  =" << endl << endl;
-		cout << "=                                         5. Quit.                                                        =" << endl << endl;
-		cout << "=                                                                                                         =" << endl << endl;
+		cout << "=                                                MAIN MENU                                                =" << endl;
+		cout << "===========================================================================================================" << endl;
+		cout << "=                                                                                                         =" << endl;
+		cout << "=                                         1. Book a train.                                                =" << endl;
+		cout << "=                                                                                                         =" << endl;
+		cout << "=                                         2. Cancel booking.                                              =" << endl;
+		cout << "=                                                                                                         =" << endl;
+		cout << "=                                         3. Show my reservation.                                         =" << endl;
+		cout << "=                                                                                                         =" << endl;
+		cout << "=                                         4. Admin menu.                                                  =" << endl;
+		cout << "=                                                                                                         =" << endl;
+		cout << "=                                         5. Quit.                                                        =" << endl;
+		cout << "=                                                                                                         =" << endl;
 		cout << "===========================================================================================================" << endl;
 		cin >> choice;
 		while ((choice < 1) || (choice > 5)) {
@@ -49,11 +54,13 @@ int main()
 				cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 				cout << "+                                               BOOKING MENU                                              +" << endl;
 				cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-				cout << "+                                                                                                         +" << endl << endl;
-				cout << "+                                         1. Show trains.                                                 +" << endl << endl;
-				cout << "+                                         2. Search for a train.                                          +" << endl << endl;
-				cout << "+                                         3. Main menu.                                                   +" << endl << endl;
-				cout << "+                                                                                                         +" << endl << endl;
+				cout << "+                                                                                                         +" << endl;
+				cout << "+                                         1. Show traines.                                                +" << endl;
+				cout << "+                                                                                                         +" << endl;
+				cout << "+                                         2. Search for a train.                                          +" << endl;
+				cout << "+                                                                                                         +" << endl;
+				cout << "+                                         3. Main menu.                                                   +" << endl;
+				cout << "+                                                                                                         +" << endl;
 				cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 				cin >> choice1;
 				while ((choice1 < 1) || (choice1 > 3)) {
@@ -206,149 +213,206 @@ int main()
 		}
 		else if (choice == 4) {
 			system("cls");
-			bool run4 = true;
-			int choice4;
-			while (run4) {
-				cout << "*********************************************************************************************************** " << endl;
-				cout << "*                                                   ADMIN MENU                                            * " << endl;
-				cout << "*********************************************************************************************************** " << endl;
-				cout << "*                                         1. Remove a train.                                              * " << endl << endl;
-				cout << "*                                         2. Insert a train.                                              * " << endl << endl;
-				cout << "*                                         3. See the number of available seats in a particular train.     * " << endl << endl;
-				cout << "*                                         4. Show all reservations                                        * " << endl << endl;
-				cout << "*                                         5. Show the gender statistics for a particular train.           * " << endl << endl;
-				cout << "*                                         6. Main menu.                                                   * " << endl << endl;
-				cout << "*********************************************************************************************************** " << endl << endl;
-				cin >> choice4;
-				while ((choice4 < 1) || (choice4 > 7)) {
-					cout << "*****************************" << endl;
-					cout << "*  Invalid command!!! Retry: ";
-					cin >> choice4;
-					cout << "*****************************" << endl;
-				}
-				if (choice4 == 1) {
-					system("cls");
-					string removetrain, removedtrain;
-					cout << "_______________________________________________" << endl;
-					cout << "Input the number of a train to remove: ";
-					cin >> removetrain;
-					cout << "_______________________________________________" << endl;
+			
+			string username, password;
+			int loginAttempt = 0;
+			cout << "######################################################################################" << endl;
+			cout << "#                                                                                    #" << endl;
+			cout << "#                             ADMINISTRATION LOG IN PAGE                             #" << endl;
+			cout << "#                                                                                    #" << endl;
+			cout << "######################################################################################" << endl<<endl<<endl;
+			
+			while (loginAttempt < 3){
+				
+	
+				cout << "USERNAME: ";
+				cin >> username;
+				cout << "PASSWORD: ";
+				cin >> password;
+	
+				system("cls");
+				if (username =="admin" && password == "admin"){
+					cout << "WELCOME ADMIN" <<endl;
+					bool run4 = true;
+					int choice4;
+					while (run4) {
+						cout << "*********************************************************************************************************** " << endl;
+						cout << "*                                                   ADMIN MENU                                            * " << endl;
+						cout << "*********************************************************************************************************** " << endl;
+						cout << "*                                                                                                         * " << endl;
+						cout << "*                                      1. Remove a train.                                                 * " << endl;
+						cout << "*                                                                                                         * " << endl;
+						cout << "*                                      2. Insert a train.                                                 * " << endl;
+						cout << "*                                                                                                         * " << endl;
+						cout << "*                                      3. See the number of available seats in a particular train.        * " << endl;
+						cout << "*                                                                                                         * " << endl;
+						cout << "*                                      4. Show all reservations                                           * " << endl;
+						cout << "*                                                                                                         * " << endl;
+						cout << "*                                      5. Show the gender statistics for a particular train.              * " << endl;
+						cout << "*                                                                                                         * " << endl;
+						cout << "*                                      6. Main menu.                                                      * " << endl;
+						cout << "*                                                                                                         * " << endl;
+						cout << "*********************************************************************************************************** " << endl;
+						cin >> choice4;
+						while ((choice4 < 1) || (choice4 > 6)) {
+							cout << "*****************************" << endl;
+							cout << "*  Invalid command!!! Retry: ";
+							cin >> choice4;
+							cout << "*****************************" << endl;
+						}
+						if (choice4 == 1) {
+							system("cls");
+							string removetrain, removedtrain;
+							cout << "_______________________________________________" << endl;
+							cout << "Input the number of a train to remove: ";
+							cin >> removetrain;
+							cout << "_______________________________________________" << endl;
 
-					removedtrain = test.remove(removetrain);
-					if (removedtrain == "NA") {
-						cout << "*************************************************" << endl;
-						cout << "*        The train is not found                 *" << endl;
-						cout << "*                                               *" << endl;
-						cout << "*  Press any key to go back to the admin menu.  *" << endl;
-						cout << "*                                               *" << endl;
-						cout << "*************************************************" << endl;
-						cin.get();
-						cin.get();
-						system("cls");
-					}
-					else if (removedtrain == "EMPTY") {
-						cout << "###############################################" << endl;
-						cout << "#        The list of train is empty.          #" << endl;
-						cout << "###############################################" << endl << endl;
+							removedtrain = test.remove(removetrain);
+							if (removedtrain == "NA") {
+								cout << "*************************************************" << endl;
+								cout << "*        The train is not found                 *" << endl;
+								cout << "*                                               *" << endl;
+								cout << "*  Press any key to go back to the admin menu.  *" << endl;
+								cout << "*                                               *" << endl;
+								cout << "*************************************************" << endl;
+								cin.get();
+								cin.get();
+								system("cls");
+							}
+							else if (removedtrain == "EMPTY") {
+								cout << "###############################################" << endl;
+								cout << "#        The list of train is empty.          #" << endl;
+								cout << "###############################################" << endl << endl;
 						
-						cout << "Press any key to go back to the admin menu." << endl;
-						cin.get();
-						cin.get();
-						system("cls");
-					}
-					else {
-						cout << "__________________________________________________________________" << endl;
-						cout << "The train with a number of " << removetrain << " has been removed." << endl;
-						cout << "__________________________________________________________________" << endl << endl;
+								cout << "Press any key to go back to the admin menu." << endl;
+								cin.get();
+								cin.get();
+								system("cls");
+							}
+							else {
+								cout << "__________________________________________________________________" << endl;
+								cout << "The train with a number of " << removetrain << " has been removed." << endl;
+								cout << "__________________________________________________________________" << endl << endl;
 						
-						cout << "Press any key to go back to the admin menu." << endl;
-						cin.get();
-						cin.get();
-						system("cls");
-					}
-				}
-				else if (choice4 == 2) {
-					system("cls");
-					string dplace, aplace, dtime, atime, trainNo, fare;
-					cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
-					cout << "+    Input a train number:  ";
-					cin >> trainNo;
-					cout << "+    Input a depature city: ";
-					cin >> dplace;
-					cout << "+    Input an arrival city: ";
-					cin >> aplace;
-					cout << "+    Input a depature time: ";
-					cin >> dtime;
-					cout << "+    Input an arrival time: ";
-					cin >> atime;
-					cout << "+    Input fare: ";
-					cin >> fare;
-					test.append(trainNo, dtime, atime, dplace, aplace, fare);
-					cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
-					cout << "The train is saved in the database!" << endl;
-					cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
-					cout << "Press any key to go back to the admin menu." << endl;
-					cin.get();
-					cin.get();
-					system("cls");
-				}
-				else if (choice4 == 3) {
-					system("cls");
-					int num;
-					string trainNo;
-					cout << "********************" << endl;
-					cout << "*  Train number:    ";
-					cin >> trainNo;
-					cout << "********************" << endl;
-					num = test.seatsAvailable(trainNo);
-					if (num == -1) {
-						cout << "*******************************************" << endl;
-						cout << "*         The train is not found.         *" << endl;
-						cout << "*******************************************" << endl << endl;
-						cout << "Press any key to go back to the admin menu." << endl;
-						cin.get();
-						cin.get();
-						system("cls");
-					}
-					else {
-						cout << "----------------------------------------------------" << endl;
-						cout << "The number of available seats in this train: " << num << endl;
-						cout << "----------------------------------------------------" << endl << endl;
+								cout << "Press any key to go back to the admin menu." << endl;
+								cin.get();
+								cin.get();
+								system("cls");
+							}
+						}
+						else if (choice4 == 2) {
+							system("cls");
+							string dplace, aplace, dtime, atime, trainNo, fare;
+							cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
+							cout << "+    Input a train number:  ";
+							cin >> trainNo;	
+							cout << "+    Input a depature city: ";
+							cin >> dplace;
+							cout << "+    Input an arrival city: ";
+							cin >> aplace;
+							cout << "+    Input a depature time: ";
+							cin >> dtime;	
+							cout << "+    Input an arrival time: ";
+							cin >> atime;
+							cout << "+    Input fare: ";
+							cin >> fare;
+							test.append(trainNo, dtime, atime, dplace, aplace, fare);
+							cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
+							cout << "The train is saved in the database!" << endl;
+							cout << "++++++++++++++++++++++++++++++++++++++++++" << endl;
+							cout << "Press any key to go back to the admin menu." << endl;
+							cin.get();
+							cin.get();
+							system("cls");
+						}
+						else if (choice4 == 3) {
+							system("cls");
+							int num;
+							string trainNo;
+							cout << "********************" << endl;
+							cout << "*  Train number:    ";
+							cin >> trainNo;
+							cout << "********************" << endl;
+							num = test.seatsAvailable(trainNo);
+							if (num == -1) {
+								cout << "*******************************************" << endl;
+								cout << "*         The train is not found.         *" << endl;
+								cout << "*******************************************" << endl << endl;
+								cout << "Press any key to go back to the admin menu." << endl;
+								cin.get();
+								cin.get();
+								system("cls");
+							}
+							else {
+								cout << "----------------------------------------------------" << endl;
+								cout << "The number of available seats in this train: " << num << endl;
+								cout << "----------------------------------------------------" << endl << endl;
 						
-						cout << "Press any key to go back to the admin menu." << endl;
-						cin.get();
-						cin.get();
-						system("cls");
-					}
-				}
+								cout << "Press any key to go back to the admin menu." << endl;
+								cin.get();
+								cin.get();
+								system("cls");
+							}
+						}
 
-				else if (choice4 == 4) {
-					system("cls");
-					test.showReservations();
-					cout << "**************************************************************************************************" << endl;
-					cout << "                         Press any key to go back to the BOOKING MENU.                            " << endl;
-					cin.get();
-					cin.get();
-					system("cls");
+						else if (choice4 == 4) {
+							system("cls");
+							test.showReservations();
+							cout << "**************************************************************************************************" << endl;
+							cout << "                         Press any key to go back to the BOOKING MENU.                            " << endl;
+							cin.get();
+							cin.get();
+							system("cls");
+						}
+						else if (choice4 == 5) {
+							system("cls");
+							string trainNo;
+							cout << "*************************************************" << endl;
+							cout << "Input a train number to see gender statistics: ";
+							cin >> trainNo;
+							test.genderStatistics(trainNo);
+							cout << "*************************************************" << endl;
+							cout << "Press any key to go back to the admin menu." << endl;
+							cin.get();
+							cin.get();
+							system("cls");
+						}
+						else if (choice4 == 6) {
+							
+							while (run4 = false){
+								run = true;	
+							}
+							
+						}
+						else {
+							cout << "*************************************************" << endl;
+							cout << "          INVALID INPUT !!! TRY AGAIN            " << endl;
+							cout << "*************************************************" << endl;
+							system("cls");
+						}
+					}
 				}
-				else if (choice4 == 5) {
-					system("cls");
-					string trainNo;
-					cout << "*************************************************" << endl;
-					cout << "Input a train number to see gender statistics: ";
-					cin >> trainNo;
-					test.genderStatistics(trainNo);
-					cout << "*************************************************" << endl;
-					cout << "Press any key to go back to the admin menu." << endl;
-					cin.get();
-					cin.get();
-					system("cls");
+				
+				else if (username =="lee" && password == "lee"){
+					run;
 				}
-				else if (choice4 == 6) {
-					run4 = false;
-					system("cls");
-				}
+					else {
+						cout << "###############################" << endl;
+						cout << "INVALID INPUT !!! TRY AGAIN" << endl;
+						cout << "###############################" <<endl<<endl;
+						loginAttempt++;
+					}
 			}
+			if (loginAttempt ==3){
+				cout << "Too many login attempts! The program will return to main menu" <<endl;
+				run = true;
+			}
+			else{
+				cout << " THANK YOU FOR LOGGING IN " <<endl;
+			}
+				
+
 		}
 		else if (choice == 5) {
 			run = false;
@@ -356,4 +420,3 @@ int main()
 	}
 	return 0;
 }
-
